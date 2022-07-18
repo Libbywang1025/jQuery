@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>variable</title>
+  </head>
+  <body>
+    <script>
+      // 1.let/const 不會自動提升變數到最上面
+      // 2.let/const 不能重複宣告
+      // 3.const 不能重新賦值
+      // 4.作用域問題，需要等有 function 的概念才能講
+
+      // 提升 Hoisting(順序錯了也不會有提醒 順序很重要!!!!!先宣告變數再給LOG)
+      // 正確寫法:先宣告定義再給log
+      // var(es5) let(es6)定義後可以重新再定義新的值
+      // let:當順序錯誤可以被發現
+      
+      
+    //var x = 10;
+    //var x = 20;（不可重複宣告 但不會被瀏覽器發現）
+    // x = 30;
+
+    //   let x = 30;
+    //let x = 40;（不可重複宣告，會出現error提醒）
+    //   x = 40;
+
+    const x = 5;
+    //  x = 10;(const定義後無法再更改值，會出現error提醒)
+
+
+      console.log('1hello' + x)
+      console.log('2hello' + x)
+      console.log('start');
+      console.log(x);
+      console.log('end');
+
+  
+    </script>
+  </body>
+</html>

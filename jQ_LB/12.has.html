@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>has</title>
+</head>
+
+<body>
+    <div>
+        <div class="a1">A1</div>
+    </div>
+    <div>
+        <div class="a2">A2</div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        //.has()- 選取含有 xx 
+        //被選到的是帶有.a1的div(第一個div)，因為has裡面是class name而非元素
+        $('div').has('.a1').css('background', 'pink')  
+    </script>
+</body>
+
+</html>

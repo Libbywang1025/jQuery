@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function</title>
+  </head>
+  <body>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+      // 匿名函式 NO NAME FUNCTION
+      // 用在一次性的地方，或者是 CALL BACK FUNCTION
+      // 後面小括號是執行的意思，但是前面太鬆散需要在一個小括號確認
+
+      (function () {
+        console.log('hi');
+        console.log('1+1', 1 + 1);
+      })();
+
+      // 常態性的功能，我們會寫成一個有名字的函式
+      // function 變數名稱(參數){執行功能}
+      // 變數名稱()執行
+      function sayhello() {
+        console.log('say hello');
+      }
+      sayhello();
+
+      // 函式可以帶入參數使用
+      function add(x, y) {
+        console.log('x:', x);
+        console.log('y:', y);
+        console.log(x + y);
+      }
+
+      add('hello', 'world');
+      add(2, 4);
+
+    </script>
+  </body>
+</html>

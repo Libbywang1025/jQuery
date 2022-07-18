@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr</title>
+</head>
+
+<body>
+    <img src="./images/background3.jpg" alt="">
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // ●取得或設定 HTML tag attribute屬性的值
+        // ●<img src=“./imgs /” alt =“”>
+        // ●取值 $(‘小圖’).attr( ‘src’)
+        // ●設值 $(‘大圖’).attr(‘src’, $(‘小圖’).attr( ‘src’))
+        const imgSrc = $('img').attr('src');
+        console.log('imgSrc:', imgSrc);
+        // $('img').attr('src', './images/background2.jpg').attr('alt','myAlt')
+
+        // 資料型態表示
+        // 使用物件方式設定 attr 的值：
+        // .attr({
+            // 屬性1: 值1,
+            // 屬性2: 值2
+        // })
+
+        $('img').attr({
+            src: './images/background5.jpg',
+            alt: 'myAlt',
+        });
+
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html</title>
+    <style>
+        span {
+            color: lightcoral;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 class="sample">Hello <span>World</span></h1>
+    <h1 class="result"></h1>
+<!-- username -->
+    <!-- <form action="">
+        <button id="btnAutoInput" type="button">AUTO INPUT</button>
+        <label for="username"></label>
+        <input id=username class="username" type="text" value="@123456" placeholder="please input your name">
+    </form> -->
+
+    <form action="">
+        
+        <label for="password">password</label>
+        <input id=password class="password" type="password" value="" placeholder="please enter your password">
+        <button id="btnAutoInput" type="button">eye</button>
+    </form>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // ●跟.text()類似，但會取得或設定 HTML tag 的HTML內容
+        // ●取值: .html()
+        // ●設值: .html(html)
+
+        // 1.拿sample的HTML存到h1html變數裡
+        const h1html = $('.sample').html(); 
+        console.log('sample html:',$('.sample').html())
+        // 2.改.result的html
+        $('.result').html(h1html)
+       
+
+        // 只改.result的文字不帶標籤
+        // $('.result').text(h1html)
+
+        // 1.拿sample的text存到h1text變數裡
+        // const h1text = $('.sample').text();
+        // 2.改.result的text
+        // $('.result').text(h1text)
+
+        // $('#btnAutoInput').click(function () {
+        //     console.log('hi');
+
+        //     $('#username').val('Alex')
+        // })
+
+        $('#btnAutoInput').click(function(){
+            console.log($('#password').attr('type'));
+
+            if($('#password').attr('type') == 'password' ){
+                $('#password').attr('type','text')
+            }
+            else{
+                $('#password').attr('type','password')
+            }
+            })
+
+
+
+    </script>
+
+</body>
+
+</html>

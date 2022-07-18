@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex6</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <style>
+        .wrap{
+            width: 800px;
+            height: 400px;
+            overflow: hidden;
+            outline: 1px solid red;
+        }
+        ul.train{
+            width: 500%;
+            transition: .5s;
+            transform: translateX();
+        }
+        ul.train li{
+            width: 800px;
+        }
+        ul.train li img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <button>click</button>
+        
+        <ul class="train list-unstyled d-flex">
+            <li>
+                <img src="./imgs/slide1.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide2.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide3.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide4.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide5.jpg" alt="">
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>

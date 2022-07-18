@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1,
+      h2 {
+        color: aqua;
+      }
+    </style>
+
+    <!-- 以前的寫法 -->
+    <!-- <script src="./JS/jquery-3.6.0.min.js"></script> -->
+
+    <!-- 方法一 -->
+    <!-- <script>
+        $(document).ready(function(){
+            $("h1").css("color","blue")
+        });
+    </script> -->
+
+    <!-- 方法二 -->
+    <!-- <script>
+         $(function(){
+            $("h1").css("color","blue")
+        });
+    </script> -->
+  </head>
+  <body>
+    <h1>Hello world</h1>
+    <h2 id="mybox" class="box">BOX</h2>
+
+    <!-- CDN連結 -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+
+    <!-- 下載至本機機 -->
+    <script src="./JS/jquery-3.6.0.min.js"></script>
+    <!-- JQ selector看執行順序，不看權重 -->
+    <script>
+      $('h1').css('color', 'red');
+      $('.box').css('color', 'blue');
+      $('#mybox').css('color', 'orange');
+      $('h1').text('it\'s Wednesday');
+      // 單引號會造成無法辨識字串 需加"\"隔開(如上)
+
+      // 變數 variable
+      var weekday="WED."
+      // weekday="MON."
+      // var變數可再改（如上）
+
+      // es5(需要自己空格)
+      $('h1').text('it\'s' + 'weekday' + ' today');
+
+      // es6字串模板(反引號` `)
+    //   $('h1').text(`it's ${weekday}`);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <table class="table table-bordered">
+                <tr>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                    <td>td5</td>
+                </tr>
+                <tr>
+                    <td><h1>td1</h1></td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                    <td>td5</td>
+                </tr>
+                <tr>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                    <td>td5</td>
+                </tr>
+                <tr>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td><h2>td3</h2></td>
+                    <td>td4</td>
+                    <td>td5</td>
+                </tr>
+                <tr>
+                    <td>td1</td>
+                    <td>td2</td>
+                    <td>td3</td>
+                    <td>td4</td>
+                    <td>td5</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // $('td').css('background','yellow').eq(2).css('background','pink');
+        // 原本寫法主詞不一樣要分兩行
+        // $('td').css('background','yellow')
+        // $('td:eq(2)').css('background','red')
+
+        $('td:odd').css('background','orange').even().css('background','yellow')
+
+
+        // ●.eq()- 選取第 n 個
+        // ●.even()- 選取第偶數個 (從零開始計算)
+        // ●.odd()- 選取第奇數個 (從零開始計算)
+        // ●.first()- 選取第一個
+        // ●.last()- 選取最後一個
+
+    </script>
+    
+</body>
+</html>

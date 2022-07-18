@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>child filter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <span>span1</span>
+            <div class="col">col1</div>
+            <div class="col">col2</div>
+            <div class="col">col3</div>
+            <div class="col">col4</div>
+            <div class="col">col5</div>
+            <div class="col">col6</div>
+        </div>
+
+        <div class="row">
+            <span>span2</span>
+            <div class="col">row2 col1</div>
+            <div class="col">row2 col2</div>
+            <div class="col">row2 col3</div>
+            <div class="col">row2 col4</div>
+            <div class="col">row2 col5</div>
+            <span>span3</span>
+            <div class="col">row2 col6</div>
+        </div>
+
+        <div class="row">
+            <div class="col">only col</div>
+        </div>
+        <div class="div">
+             <span>1</span>
+        </div>
+       
+    </div>
+    
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // $('.col:first-child').css('background','pink');
+        // $('span:last-of-type').css('background','pink');
+        // $('.col:eq(3)').css('background','lightblue');
+        // first-child與eq的差異:first-child以各層為基準；eq沒有架構的概念，全部一起選
+        // $('span:only-of-type').css('background','red');
+        // $('.col:only-child').css('background','red');
+        // $('span:nth-of-type(2)').css('background','orange');
+        $('span:nth-last-of-type(2)').css('background','orange');
+
+
+        
+        // ●:first-child - 選取第一個
+        // ●:last-child - 選取最後一個
+        // ●:first-of-type - 選取同類第一個
+        // ●:last-of-type - 選取同類最後一個
+        // ●:nth-child() - 第 n 個(從1開始)
+        // ●:nth-last-child() - 倒數第 n 個
+        // ●:nth-of-type()
+        // ●:nth-last-of-type()
+        // ●:only-child - 選取只有一個的
+        // ●:only-of-type
+        
+   </script>
+</body>
+</html>

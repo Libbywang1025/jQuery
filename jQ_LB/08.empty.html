@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>empty</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    
+</head>
+<body>
+    <!-- 下方.table是為了引用bootstrap表格樣式 -->
+    <table class="table empty"> 
+        <tbody> 
+            <tr> 
+                <td>1</td>
+                <td></td> 
+                <td>3</td>
+                <td></td> 
+            </tr> 
+        </tbody> 
+    </table>
+
+
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script>
+    // ●:empty- 選取內容為空的元素
+    $(".empty td:empty").css("background", "blue");
+    // 選取帶有empty class name底下所有td且為empty 
+</script>
+        
+</body>
+</html>

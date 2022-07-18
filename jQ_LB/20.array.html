@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array</title>
+  </head>
+  <body>
+    <!-- 資料型態 -->
+    <!-- '字串',數字,布林值Boolean(true/false) -->
+    <!-- 1.陣列array = [可以是數字、字串、物件 ] -->
+    <!-- 2.物件Object = {字串 key:value,} -->
+
+    <!-- const myArray = ['100a','b','c',1000,3,9,true,false ] -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+      // 數字
+      // const myArray = [0,1,2,3,4]
+      // console.log('myArray:', myArray);
+
+      // const myArray = ['background2.jpg','background3.jpg','background4.jpg']
+      // // 取得陣列順序2-background4.jpg
+      // console.log('myArray[2]:',myArray[2])
+
+      // []中括號表示法才可以放變數，點表示不可放變數
+     
+      const memberList = [
+        { id: 1, membername: 'Allen', tel: '0931-785-744', birth: '1993/1/20' },
+        { id: 2, membername: 'Eric', tel: '0979-777-334', birth: '1997/12/20' },
+      ];
+
+      // 判斷式
+      // if(true){
+      //     do sth;
+      // }
+      // else if(條件2){
+      //     if(){
+
+      //     }else{
+      //     }
+      // }
+
+      // 同時成立
+      // true && true = true
+      // true && false = false
+
+      // 其中一個成立
+      // true || true = true
+      // true || false = true
+
+      
+      const config1 = '';
+      const config2 = 'birth';
+      // ｜｜（or）用來判斷有沒有值，沒有預設值就是no config1
+      const isConfig1 = config1 || 'no config1';
+      console.log('isConfig1:', isConfig1);
+
+
+
+      // if (memberList[0]['membername'] == 'Allen') {
+      //   document.write('Yes');
+      // } else {
+      //   document.write('No');
+      // }
+
+      // if(memberList[0].membername == 'Allen' || memberList[0].birth == '1993/1/20'){
+      //           console.log('memberList[0].id:', memberList[0].id);
+      //   }
+      //   else{
+      //       console.log('you\'re not Allen!!!!');
+      //   }
+
+
+
+      // 有細節一定要用Object 下方方式較少用，沒有名字無法取得
+      // const memberList2 ={
+      // Allen:{tel:'0931-785-744', birth:'1993/1/20'},
+      // Eric:{tel:'0979-777-334', birth:'1997/12/20'},
+
+      // }
+    </script>
+  </body>
+</html>

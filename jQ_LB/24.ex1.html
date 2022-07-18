@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="img-demo d-flex justify-content-center">
+            <img src="./imgs/product1.jpg" alt="">
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="img-selector-area d-flex">
+            <div class="img-wrap"><img class="w-100" src="./imgs/product1.jpg" alt=""></div>
+            <div class="img-wrap"><img class="w-100" src="./imgs/product2.jpg" alt=""></div>
+            <div class="img-wrap"><img class="w-100" src="./imgs/product3.jpg" alt=""></div>
+            <div class="img-wrap"><img class="w-100" src="./imgs/product4.jpg" alt=""></div>
+            <div class="img-wrap"><img class="w-100" src="./imgs/product5.jpg" alt=""></div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+
+
+    <!-- <img src="./images/3.png" alt="">
+    <img src="./images/4.png" alt=""> -->
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // 滑鼠點擊左鍵事件 .click()
+        // 回呼函式 callback function
+        // 事件裡面的主角是誰? 誰被點擊了? 可以用 this 來代替
+
+        $('.img-wrap > img').click(function () {
+            // console.log('img clicked');
+            // $(this)為jq自帶變數、代表某人用的、誰呼叫這個函數就是誰
+            // console.log('img clicked',$(this));
+
+            // 點擊圖片拿到被點擊的圖
+            console.log('img clicked', $(this).attr('src'));
+
+        })
+
+        // 規格表:
+        // [功能1] 點擊小圖，大圖要換成小圖的圖片
+        // 1.時機點: 點擊小圖的時候 (事件)
+        // 2.誰要換圖片? 大圖
+        // 3.換成甚麼圖片? 誰被點，就換誰的圖片(抽象)
+        // 4.我怎麼知道誰被點? 被點擊的那一刻，瀏覽器會告訴你答案($(this))
+
+        // DO-1.用事件來代表要執行的時間點:
+        $('.img-wrap > img').click(function () {
+            // 先實驗換圖片的功能是否能實現。
+            // 主詞(大圖):我想改變圖片的那個人是誰?能在這裡得到他嗎?
+            // $('.img-demo img').attr('src', './imgs/product5.jpg');
+
+
+            // DO-1-1.拿到被點擊的小圖
+            // console.log('img clicked.', $(this).attr('src'));
+
+
+            // DO-1-2.修改 DEMO 的大圖
+            // $('.img-demo > img').attr('src', $(this).attr('src'))
+
+            // 定義為變數
+            const imgClicked = $(this).attr('src')
+            $('.img-demo img').attr('src', imgClicked)
+
+        })
+
+    </script>
+</body>
+
+</html>

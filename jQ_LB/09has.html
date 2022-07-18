@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ：has </title>
+</head>
+<body>
+    
+    <div>
+        abc
+    </div>
+    
+    <div>
+        <p>def</p>
+        <p>def</p>
+        
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // ●:has()- 包含 xx 元素
+      $('div:has(p)').css('background','lightblue') 
+    // 選擇符合div且帶有p的字串
+    </script>
+</body>
+</html>
