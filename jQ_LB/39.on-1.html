@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on 1</title>
+</head>
+
+<body>
+    <button>CLICK</button>
+    <div class="container">
+        <div class="row">
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        //1. DOM 是後來才產生的時候綁定事件
+        //2. 一個 selector 需要綁定多個事件時
+        //3. 不同事件觸發一樣的動作時
+
+        //在ul裡面綁定的li
+        // 後來才產生的dom一定要用on
+
+        $('li').click(function () {
+            console.log('text:', $(this).text());
+        })
+
+        // $('button').click(function () {
+        //     $("ul").append('<li>item 3</li>');
+        // })
+
+        $('ul').on('click', 'li', function () {
+            console.log('text:', $(this).text());
+        })
+        $('button').on('click', function () {
+            $("ul").append('<li>item 3</li>');
+        })
+        // click可以改成其他觸發方式(mouseenter、hover)
+        // .on 優點:在()裡面想加什麼就加什麼  缺點:字串沒有提示 要小心
+
+
+
+    </script>
+
+</body>
+
+</html>

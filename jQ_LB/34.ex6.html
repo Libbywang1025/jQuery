@@ -50,7 +50,7 @@
     </div>
     <div class="wrap">
         <ul class="train list-unstyled d-flex">
-            <li>
+            <!-- <li>
                 <img src="./imgs/slide1.jpg" alt="">
             </li>
             <li>
@@ -64,13 +64,20 @@
             </li>
             <li>
                 <img src="./imgs/slide5.jpg" alt="">
-            </li>
+            </li> -->
         </ul>
 
     </div>
 
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script>
+        // 迴圈(前端工程師)
+        const sliderImgArray = ['slide1.jpg', 'slide2.jpg', 'slide3.jpg','slide4.jpg','slide5.jpg']
+        $(sliderImgArray).each(function (index, item) {
+            $('ul.train').append(`<li><img src="./imgs/${item}"></li>`)
+        })
+
+
         let nowPage = 0;
 
         $('#next').click(function () {
@@ -93,7 +100,7 @@
             moveX(nowPage);
             // const moveX =  nowPage * -800;
             // $('ul.train').css('transform',`translateX(${moveX}px)`);
-           
+
         })
 
 

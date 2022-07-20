@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex9</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .wrap {
+            width: 800px;
+            height: 400px;
+            background-color: #ccc;
+            position: relative;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 213, 0);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap mx-auto">
+        <div class="box"></div>
+    </div>
+
+    <div class="text-center">
+        <button id="top"><i class="fa-solid fa-circle-chevron-up"></i></button>
+    </div>
+
+    <div class="text-center">
+        <button id="left" class="mx-3"><i class="fa-solid fa-circle-chevron-left"></i></button>
+        <button id="right" class="mx-3"><i class="fa-solid fa-circle-chevron-right"></i></button>
+    </div>
+
+    <div class="text-center">
+        <button id="down"><i class="fa-solid fa-circle-chevron-down"></i></button>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $('#right').click(function () {
+            // 先測試是否正確
+            // console.log('right');
+            // parseInt轉型態(字串無法比大小)
+            const left = parseInt($('.box').css('left'));
+            // consloe.log('left:',left);
+            // 確認型態
+            // consloe.log('typeof left:', typeof left);
+
+            console.log(($('.wrap').width() - $('.box').width()));
+
+            if (left < ($('.wrap').width() - $('.box').width())) {
+                $('.box').css('left', '+=100')
+            }
+        })
+
+
+        $(document).keydown(function (e) {
+            console.log('hi', e.keyCode);
+            if(e.keyCode == 39){
+                const left = parseInt($('.box').css('left'));
+                if(left < ($('.wrap').width() - $('.box').width()) ){
+                $('.box').css('left','+=100')
+            }
+            }
+
+            if(e.keyCode == 37){
+                // const left = parseInt($('.box').css('left'));
+                // if(left < ($('.wrap').width() - $('.box').width()) ){
+                $('.box').css('left','-=100')
+            }
+        })
+
+    </script>
+
+
+</body>
+
+</html>
