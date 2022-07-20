@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>css</title>
     <style>
-        .box {
-            width: 200px;
-            height: 200px;
-            background-color: #ffa;
-            transition: .5S;
-        }
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: #ffa;
+        transition: 0.5s;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="box"></div>
-
-
-
 
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script>
-        $('.box').click(function () {
-            // 累進值
-            // $(this).css('width','+=100')
+      $('.box').click(function () {
+        // 累進值
+        $(this).css('width', '+=100');
+        // $(this).css('width','500px')
+        // 拿背景rgb
+        // console.log('background', $(this).css('background-color'));
+        const boxBG = $(this).css('background-color');
 
-            // 改樣式
-            // $(this).css('width','500px')
-            // console.log('bacdground', $(this).css('background-color'));
-            // const boxBG = $(this).css('background-color')
-            // console.log('true or false:', boxBG == 'rgb(255, 255, 170)');
+        // 確認rgb
+        // console.log('true or false:', boxBG == 'rgb(255, 255, 170)');
 
-            // if (boxBG == 'rgb(255, 255, 170)') {
-            //     // $(this).css('background-color', '#faf')
-            //     $(this).css({
-            //         backgroundColor: '#faa',
-            //         width: '500px',
-            //     });
-            // }
-            // else {
-            //     // $(this).css('background-color', 'rgb(255, 255, 170)')
-            //     console.log('else');
-            //     $(this).css({
-            //         backgroundColor: '#ffa',
-            //         width: '200px';
-            //     });
-            // }
-        })
+        if (boxBG == 'rgb(255, 255, 170)') {
+          // 確認判斷條件有沒有帶入，會不會互換
+          console.log('if');
+          // $(this).css('background-color', '#faf');
 
+          // 設定多樣式，用object寫法(key:value)，因為不是字串要注意用小駝峰表示法
+          $(this).css({
+            backgroundColor: '#faa',
+            width: '500px',
+          });
+        } else {
+          // 確認判斷條件有沒有帶入，會不會互換
+          console.log('else');
+          // $(this).css('background-color', 'rgb(255, 255, 170)').css('width','200px')
+
+        //  設定多樣式，用object寫法(key:value)，因為不是字串要注意用小駝峰表示法
+          $(this).css({
+            backgroundColor: '#ffa',
+            width: '200px',
+          });
+        }
+      });
     </script>
-</body>
-
+  </body>
 </html>

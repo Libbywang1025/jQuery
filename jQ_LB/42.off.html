@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>off</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <button id="sayHi">sayHi</button>
     <button id="on">on</button>
     <button id="off">off</button>
 
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script>
+      // ●專門用在取消由 on 建立的事件
 
-        const sayHi = function name(params) {
-            console.log('Hi');
-        }
+      const sayHi = function () {
+        console.log('Hi');
+      };
 
-        // function包function:點擊on後再點擊sayHi才有用 
-        $('#on').click(function () {
-            console.log('on');
-            $('#sayHi').on('click',sayHi)
-        })
+      // function包function:點擊on後再點擊sayHi才有用
+      $('#on').click(function () {
+        console.log('on');
+        $('#sayHi').on('click', sayHi);
+      });
 
-        $('#off').click(function () {
-            console.log('off');
-            $('#sayHi').off('click',sayHi)
-        
-        })
-
+      $('#off').click(function () {
+        console.log('off');
+        $('#sayHi').off('click', sayHi);
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
