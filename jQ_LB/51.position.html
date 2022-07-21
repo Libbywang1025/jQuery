@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        .wrap{
+            width: 800px;
+            height: 800px;
+            background-color: #ccc;
+            padding: 50px;
+            position: relative;
+        }
+        .wrap-inner{
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+            /* padding: 50px; */
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="wrap-inner">
+            <div class="box"></div>
+        </div>
+    </div>
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // 國良:比較不常用，位置不能改，純粹取得座標、相對位置
+       console.log('.box position:',$('.box').position());
+        
+    </script>
+</body>
+</html>
