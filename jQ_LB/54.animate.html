@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amimate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</head>
+
+<body>
+    <!-- attr不可以用小駝峰寫法 要用連接符號 -->
+    <button id="bounce" data-ani-name="bounce" data-ani-time="3s">bounce</button>
+    <button id="flash">flash</button>
+    <h1 class="animate__animated">An animated element</h1>
+    
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        // $('#bounce').click(function () {
+        //     // console.log('bounce click');
+           
+        //     $('h1').addClass('animate__bounce')
+
+        //     //h1在每一次動畫結束的瞬間才會觸發remove
+        //     $('h1').one('animationend', function () {
+        //         // console.log('hi');
+        //         $('h1').removeClass('animate__bounce')
+
+        //     })
+        // })
+
+
+        // 彈性寫法，如果有人text不是設bounce，用text找可能找不到
+        $('button').click(function () {
+            console.log('click',$(this).text());
+            const animationName = 'animate__' + $(this).text();
+            $('h1').addClass(animationName)
+
+            $('h1').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                console.log('h1animationend');
+                $('h1').removeClass(animationName)
+            })
+        })
+
+
+        // 進階寫法-attr.
+        // $('button').click(function () {
+        //     console.log('click',$(this).data('ani-name'));
+        //     console.log('click',$(this).data('ani-time'));
+        //     const animationName = 'animate__' + $(this).data();
+        //     $('h1').addClass(animationName)
+
+        //     $('h1').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+        //         console.log('h1animationend');
+        //         $('h1').removeClass(animationName)
+        //     })
+        // })
+
+
+
+
+    </script>
+
+</body>
+
+</html>

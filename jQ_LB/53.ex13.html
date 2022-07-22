@@ -71,26 +71,25 @@
 
       <script src="./js/jquery-3.6.0.min.js"></script>
       <script>
-        let lastScroll = 0;
+         let lastScroll = 0
 
+         $(window).scroll(function() {
+          let scrollNow =  $(window).scrollTop();
 
-          $(window).scroll(function(){
-            let scrollNow =  $(window).scrollTop();
+          console.log('lastScroll:',lastScroll);
+          console.log('scrollNow:',scrollNow);
 
-            console.log('lastScroll:', lastScroll);
-            console.log('scrollNow', scrollNow);
+          if(scrollNow > lastScroll){
+            $('.navbar').addClass('hidden')
+          }
+          else{
+            $('.navbar').removeClass('hidden')
+          }
 
-            if(scrollNow > lastScroll){
-              $('.navbar').addClass('hidden')
-            }
-            else{
-              $('.navbar').removeClass('hidden')
-            }
-
-
-            lastScroll = scrollNow;
-
-          })
+          lastScroll = scrollNow;
+          
+         })
+          
       </script>
 </body>
 </html>

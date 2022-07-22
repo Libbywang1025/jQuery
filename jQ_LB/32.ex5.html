@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ex5</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -50,9 +52,32 @@
 
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script>
-        $('input[type="checkbox"]').click(function(){
-            console.log('hi',$(this));
+        $('input[type="checkbox"]').click(function () {
+            console.log('hi', $(this).prop('checked'));
+            // console.log('h1'.$(this).closest('tr').css('background-color'));
+
+            // if ($(this).closest('tr').css('background-color') == 'rgb(173, 216, 230)') {
+            //     $(this).closest('tr').css('background', 'rgba(0, 0, 0, 0)')
+            // }
+            // else {
+
+            //     $(this).closest('tr').css('background', 'rgb(173, 216, 230)')
+            // }
+
+            //attr.屬性 prop.當時狀態
+            if ($(this).prop('checked')) {
+                $(this).closest('tr').css('background', 'rgb(173, 216, 230)')
+            }
+            else {
+                $(this).closest('tr').css('background', 'rgba(0, 0, 0, 0)')
+            }
         })
+
+
+
+
+
     </script>
 </body>
+
 </html>
