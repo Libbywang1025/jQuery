@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,17 +15,19 @@
     </style>
 
 </head>
+
 <body>
-    
+
     <!-- <button>click</button> -->
     <button id="start">start</button>
     <button id="stop">stop</button>
     <div class="box"></div>
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/color/jquery.color-2.1.2.js"></script>
-    <!-- JQ要用顏色就要引用這個 -->
+    <!-- JQ要換顏色就要引用jquery color -->
 
     <script>
+        // ●.animate()- 建立自定義動畫
         // $("button").click(function () {
         //     $(".box").animate({
         //         width: '500px',
@@ -34,16 +37,26 @@
         // });
 
 
+
+        // ●.stop()- 在完成動畫之前停止效果
+        // $(selector).stop(stopAll,goToEnd); 
+        // stopAll 參數: 是否停止後續所有動畫，預設為 false
+        // goToEnd參數：是否要立即完成目前進行中的動畫，預設為 false
+
         $("#start").click(function () {
             $(".box").animate({
                 width: '500px',
                 opacity: '0.5',
                 backgroundColor: 'red',
-            },2000).animate({width:'200px',opacity:'1',backgroundColor:'#ffa'},2000);;
+            }, 2000).animate({ width: '200px', opacity: '1', backgroundColor: '#ffa' }, 2000);
         });
 
-        $('#stop').click(function(){
-            $('.box').stop(true,false);
+        $('#stop').click(function () {
+            // stop()預設false false，按動畫直接結束回到原點
+            // $('.box').stop(false,false);
+            // 直接執行到結果
+            $('.box').stop(true, true);
+            // $('.box').stop(true,false);
         })
 
     </script>
@@ -51,4 +64,5 @@
 
 
 </body>
+
 </html>

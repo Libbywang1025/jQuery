@@ -11,18 +11,22 @@
 </head>
 
 <body>
-    <!-- attr不可以用小駝峰寫法 要用連接符號 -->
-    <button id="bounce" data-ani-name="bounce" data-ani-time="3s">bounce</button>
-    <button id="flash">flash</button>
+
+    <!-- <button id="bounce">bounce</button> -->
+    <!-- 如果有人text不是設bounce，用text找可能找不到 -->
+    <!-- 在html內不用小駝峰的寫法， 要用連接符號 ex.data-ani-name -->
+    <button id="bounce" data-ani-name="bounce" data-ani-time="3s">click-bounce</button>
+    <button id="flash" data-ani-name="flash">click-flash</button>
     <h1 class="animate__animated">An animated element</h1>
-    
+
 
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script>
 
         // $('#bounce').click(function () {
         //     // console.log('bounce click');
-           
+
+        //     在h1身上加animate__bounce的class name
         //     $('h1').addClass('animate__bounce')
 
         //     //h1在每一次動畫結束的瞬間才會觸發remove
@@ -34,24 +38,10 @@
         // })
 
 
-        // 彈性寫法，如果有人text不是設bounce，用text找可能找不到
-        $('button').click(function () {
-            console.log('click',$(this).text());
-            const animationName = 'animate__' + $(this).text();
-            $('h1').addClass(animationName)
-
-            $('h1').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-                console.log('h1animationend');
-                $('h1').removeClass(animationName)
-            })
-        })
-
-
-        // 進階寫法-attr.
+        // 如果有多顆按鈕多種動畫想要觸發的彈性寫法
         // $('button').click(function () {
-        //     console.log('click',$(this).data('ani-name'));
-        //     console.log('click',$(this).data('ani-time'));
-        //     const animationName = 'animate__' + $(this).data();
+        //     console.log('click',$(this).text());
+        //     const animationName = 'animate__' + $(this).text();
         //     $('h1').addClass(animationName)
 
         //     $('h1').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
@@ -59,6 +49,26 @@
         //         $('h1').removeClass(animationName)
         //     })
         // })
+
+
+        // 如果有人text不是設bounce， 設$(this).text()會找不到
+        $('button').click(function () {
+            // 進階寫法 - .attr('id')
+            // console.log('click',$(this).attr('id'));
+            // const animationName = 'animate__' + $(this).attr('id');
+
+            // 但id命名不一定叫動畫名稱且不能重覆，所以用 data-自訂變數名稱 是最佳寫法
+            console.log('click', $(this).data('ani-name'));
+            // console.log('click', $(this).data('ani-time'));
+            const animationName = 'animate__' + $(this).data('ani-name');
+           
+
+            $('h1').addClass(animationName)
+            $('h1').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                // console.log('h1animationend');
+                $('h1').removeClass(animationName)
+            })
+        })
 
 
 
